@@ -1,37 +1,31 @@
 <!DOCTYPE html>
 <html lang="en" class="dark">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Kacper Górka</title>
-		<link rel="icon" href="/favicon.ico" type="image/x-icon" />
-        <link href="/tailwind.min.css" rel="stylesheet">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Kacper Górka</title>
+        <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+        <link href="/tailwind.min.css" rel="stylesheet" />
+        <script>
+            function toggleTheme() {
+                document.documentElement.classList.toggle('dark');
+            }
 
-		<script>
-			tailwind.config = {
-				darkMode: 'class'
-			};
+            function openModal() {
+                document.getElementById('discordModal').classList.remove('hidden');
+            }
 
-			function toggleTheme() {
-				document.documentElement.classList.toggle('dark');
-			}
-
-			function openModal() {
-				document.getElementById('discordModal').classList.remove('hidden');
-			}
-
-			function closeModal() {
-				document.getElementById('discordModal').classList.add('hidden');
-			}
-		</script>
-
-		<style>
-			html,
-			body {
-				height: 100%;
-			}
-		</style>
-	</head>
+            function closeModal() {
+                document.getElementById('discordModal').classList.add('hidden');
+            }
+        </script>
+        <style>
+            html,
+            body {
+                height: 100%;
+            }
+        </style>
+    </head>
 
 	<body class="bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-500 h-full">
 		<div id="discordModal" class="fixed inset-0 hidden z-50 flex items-center justify-center bg-black bg-opacity-50 backdrop-blur-sm">
