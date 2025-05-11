@@ -4,16 +4,16 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Kacper Górka</title>
-        
-        <meta name="description" content="Kacper Górka – Student of the Zespół Szkół Elektronicznych in Bydgoszcz.">
-        <meta name="author" content="Kacper Górka">
-        <meta name="robots" content="index, follow">
 
-        <meta property="og:title" content="Kacper Górka">
-        <meta property="og:description" content="Kacper Górka – Student of the Zespół Szkół Elektronicznych in Bydgoszcz.">
-        <meta property="og:type" content="website">
-        <meta property="og:url" content="https://kacpergorka.com">
-        
+		<meta name="description" content="Kacper Górka – Student at Zespół Szkół Elektronicznych in Bydgoszcz.">
+		<meta name="author" content="Kacper Górka">
+		<meta name="robots" content="index, follow">
+
+		<meta property="og:title" content="Kacper Górka">
+		<meta property="og:description" content="Kacper Górka – Student at Zespół Szkół Elektronicznych in Bydgoszcz.">
+		<meta property="og:type" content="website">
+		<meta property="og:url" content="https://kacpergorka.com">
+		
 		<link rel="icon" href="/favicon.ico" type="image/x-icon">
 		<script src="https://cdn.tailwindcss.com"></script>
 
@@ -24,6 +24,14 @@
 
 			function toggleTheme() {
 				document.documentElement.classList.toggle("dark");
+			}
+
+			function toggleDiscordTooltip() {
+				if (window.innerWidth <= 768) {
+					const tooltip = document.getElementById("discordTooltip");
+					tooltip.classList.toggle("opacity-0");
+					tooltip.classList.toggle("opacity-100");
+				}
 			}
 		</script>
 
@@ -47,7 +55,7 @@
 					<div class="text-center sm:text-left">
 						<h1 class="text-xl sm:text-5xl font-semibold tracking-tight">Kacper Górka</h1>
 						<p class="text-xl sm:text-lg text-gray-500 dark:text-gray-400 mt-4">
-							I'am student of the Zespół Szkół Elektronicznych in Bydgoszcz. Contact me by email.
+							I'm a student at Zespół Szkół Elektronicznych in Bydgoszcz. This website is currently a work in progress. You can contact me via email.
 						</p>
 					</div>
 				</div>
@@ -65,7 +73,7 @@
 					<a href="https://www.instagram.com/kacpergorka.dev" target="_blank" class="hover:scale-110 transition-transform">
 						<img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram" class="w-6 h-6 dark:invert">
 					</a>
-					<a id="discordIcon" class="relative group hover:scale-110 transition-transform cursor-pointer select-none">
+					<a id="discordIcon" class="relative group hover:scale-110 transition-transform cursor-pointer select-none" onclick="toggleDiscordTooltip()">
 						<img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/discord.svg" alt="Discord" class="w-6 h-6 dark:invert">
 						<span id="discordTooltip" class="absolute -top-8 left-1/2 -translate-x-1/2 bg-gray-800 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
 							@kacpergorka
