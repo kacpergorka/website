@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Kacper Górka</title>
+		<link rel="icon" href="favicon.ico" type="image/x-icon" />
+		<script src="https://cdn.tailwindcss.com"></script>
+
+		<script>
+			tailwind.config = {
+				darkMode: 'class'
+			};
+
+			function toggleTheme() {
+				document.documentElement.classList.toggle('dark');
+			}
+
+			function openModal() {
+				document.getElementById('discordModal').classList.remove('hidden');
+			}
+
+			function closeModal() {
+				document.getElementById('discordModal').classList.add('hidden');
+			}
+		</script>
+
+		<style>
+			html,
+			body {
+				height: 100%;
+			}
+		</style>
+	</head>
+
+	<body class="bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-500 h-full">
+		<div id="discordModal" class="fixed inset-0 hidden z-50 flex items-center justify-center bg-black bg-opacity-50 backdrop-blur-sm">
+			<div class="bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 rounded-2xl shadow-xl p-6 max-w-sm w-full text-left">
+				<p class="text-lg">Invite me on Discord <strong>@kacpergorka</strong></p>
+				<button onclick="closeModal()" class="mt-4 px-4 py-2 bg-gray-200 dark:bg-gray-700 rounded hover:bg-gray-300 dark:hover:bg-gray-600 transition">
+					Close
+				</button>
+			</div>
+		</div>
+
+		<div class="flex items-center justify-center min-h-screen px-4">
+			<div class="text-center sm:text-left space-y-6 max-w-xl w-full">
+				<button onclick="toggleTheme()" class="absolute top-4 right-4 text-sm px-4 py-2 rounded-xl bg-gray-200 dark:bg-gray-800 hover:shadow transition">
+					Switch theme
+				</button>
+
+				<div class="flex flex-col items-center justify-center sm:flex-row sm:items-start sm:space-x-6 sm:space-y-0 space-y-6">
+					<img src="profile.png" alt="Kacper Górka" class="w-32 h-32 sm:w-24 sm:h-24 rounded-full border-4 border-gray-200 dark:border-gray-800">
+					<div class="text-center sm:text-left">
+						<h1 class="text-xl sm:text-5xl font-semibold tracking-tight">Kacper Górka</h1>
+						<p class="text-xl sm:text-lg text-gray-500 dark:text-gray-400 mt-4">
+							I'am Student of the Zespół Szkół Elektronicznych in Bydgoszcz. Contact me by email.
+						</p>
+					</div>
+				</div>
+
+				<div class="flex justify-center space-x-6 mt-6">
+					<a href="https://github.com/kacpergorka" target="_blank" class="hover:scale-110 transition-transform">
+						<img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg" alt="GitHub" class="w-6 h-6 dark:invert">
+					</a>
+					<a href="https://www.facebook.com/kacpergorka.dev" target="_blank" class="hover:scale-110 transition-transform">
+						<img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" alt="Facebook" class="w-6 h-6 dark:invert">
+					</a>
+					<a href="mailto:kontakt@kacpergorka.com" class="hover:scale-110 transition-transform">
+						<img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/maildotru.svg" alt="Email" class="w-6 h-6 dark:invert">
+					</a>
+					<a href="https://www.instagram.com/kacpergorka.dev" target="_blank" class="hover:scale-110 transition-transform">
+						<img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram" class="w-6 h-6 dark:invert">
+					</a>
+					<a href="#" onclick="openModal()" class="relative group hover:scale-110 transition-transform">
+						<img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/discord.svg" alt="Discord" class="w-6 h-6 dark:invert">
+						<span class="absolute -top-8 left-1/2 -translate-x-1/2 bg-gray-800 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">
+							@kacpergorka
+						</span>
+					</a>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
