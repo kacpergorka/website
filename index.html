@@ -3,6 +3,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta id="theme-color-meta" name="theme-color" content="#111827">
 		<title>Kacper Górka</title>
 
 		<meta name="description" content="Kacper Górka – Student at Zespół Szkół Elektronicznych in Bydgoszcz.">
@@ -20,15 +21,16 @@
 		<link rel="manifest" href="/config/site.webmanifest">
 	</head>
 
-	<body class="bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-500 h-full">
+	<body class="bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-500 ease-in-out h-full">
 		<div class="flex items-center justify-center min-h-screen px-4">
 			<div class="text-center sm:text-left space-y-6 max-w-xl w-full">
-				<button onclick="toggleTheme()" class="absolute top-4 right-4 text-sm px-4 py-2 rounded-xl bg-gray-200 dark:bg-gray-800 hover:shadow transition">
+				<button onclick="toggleTheme()" class="absolute top-4 right-4 text-sm px-4 py-2 rounded-xl bg-gray-200 dark:bg-gray-800 hover:shadow transition-colors duration-300">
 					Switch theme
 				</button>
 
 				<div class="flex flex-col items-center justify-center sm:flex-row sm:items-start sm:space-x-6 sm:space-y-0 space-y-6">
-					<img src="/images/profile.png" alt="Kacper Górka" class="w-32 h-32 sm:w-24 sm:h-24 rounded-full border-4 border-gray-200 dark:border-gray-800">
+					<img src="/images/profile.png" alt="Kacper Górka"
+						class="w-32 h-32 sm:w-24 sm:h-24 rounded-full border-4 border-gray-200 dark:border-gray-800 transition-colors duration-500 ease-in-out">
 					<div class="text-center sm:text-left">
 						<h1 class="text-xl sm:text-5xl font-semibold tracking-tight">Kacper Górka</h1>
 						<p class="text-xl sm:text-lg text-gray-500 dark:text-gray-400 mt-4">
@@ -39,22 +41,19 @@
 
 				<div class="flex justify-center space-x-6 mt-6">
 					<a href="https://github.com/kacpergorka" target="_blank" class="hover:scale-110 transition-transform">
-						<img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg" alt="GitHub" class="w-6 h-6 dark:invert">
-					</a>
-					<a href="https://www.facebook.com/kacpergorka.dev" target="_blank" class="hover:scale-110 transition-transform">
-						<img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" alt="Facebook" class="w-6 h-6 dark:invert">
+						<img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg" alt="GitHub" class="w-6 h-6 dark:invert transition duration-300">
 					</a>
 					<a href="mailto:kontakt@kacpergorka.com" class="hover:scale-110 transition-transform">
-						<img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/maildotru.svg" alt="Email" class="w-6 h-6 dark:invert">
+						<img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/maildotru.svg" alt="Email" class="w-6 h-6 dark:invert transition duration-300">
+					</a>
+					<a href="https://www.facebook.com/kacpergorka.dev" target="_blank" class="hover:scale-110 transition-transform">
+						<img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" alt="Facebook" class="w-6 h-6 dark:invert transition duration-300">
 					</a>
 					<a href="https://www.instagram.com/kacpergorka.dev" target="_blank" class="hover:scale-110 transition-transform">
-						<img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram" class="w-6 h-6 dark:invert">
+						<img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram" class="w-6 h-6 dark:invert transition duration-300">
 					</a>
-					<a id="discordIcon" class="relative group hover:scale-110 transition-transform cursor-pointer select-none" onclick="toggleDiscordTooltip()">
-						<img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/discord.svg" alt="Discord" class="w-6 h-6 dark:invert">
-						<span id="discordTooltip" role="tooltip" class="absolute -top-8 left-1/2 -translate-x-1/2 bg-gray-800 text-white text-xs px-2 py-1 rounded opacity-0 md:group-hover:opacity-100 transition-opacity duration-200 ease-in-out pointer-events-none">
-							@kacpergorka
-						</span>
+					<a href="https://discord.gg/8yUkjcWUFK" target="_blank" class="hover:scale-110 transition-transform">
+						<img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/discord.svg" alt="Discord" class="w-6 h-6 dark:invert transition duration-300">
 					</a>
 				</div>
 			</div>
