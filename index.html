@@ -14,48 +14,10 @@
 		<meta property="og:type" content="website">
 		<meta property="og:url" content="https://kacpergorka.com">
 		
-		<link rel="icon" href="/favicon.ico" type="image/x-icon">
-		<script src="https://cdn.tailwindcss.com"></script>
-
-		<script>
-			let isTooltipVisible = false;
-
-			tailwind.config = {
-				darkMode: "class"
-			};
-
-			function toggleTheme() {
-				document.documentElement.classList.toggle("dark");
-			}
-
-			function showTooltip(tooltip) {
-				tooltip.classList.add("opacity-100");
-				tooltip.classList.remove("opacity-0");
-				isTooltipVisible = true;
-	  		}
-
-	  		function hideTooltip(tooltip) {
-				tooltip.classList.add("opacity-0");
-				tooltip.classList.remove("opacity-100");
-				isTooltipVisible = false;
-	  		}
-
-	  		function toggleDiscordTooltip() {
-				const tooltip = document.getElementById("discordTooltip");
-				if (window.innerWidth > 768) return;
-
-				isTooltipVisible ? hideTooltip(tooltip) : showTooltip(tooltip);
-	  		}
-
-	  		document.addEventListener("click", function (event) {
-				const icon = document.getElementById("discordIcon");
-				const tooltip = document.getElementById("discordTooltip");
-
-				if (isTooltipVisible && !icon.contains(event.target)) {
-		  		hideTooltip(tooltip);
-				}
-	  		});
-			</script>
+		<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+		<link rel="manifest" href="/config/site.webmanifest">
 	</head>
 
 	<body class="bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-500 h-full">
@@ -66,7 +28,7 @@
 				</button>
 
 				<div class="flex flex-col items-center justify-center sm:flex-row sm:items-start sm:space-x-6 sm:space-y-0 space-y-6">
-					<img src="/profile.png" alt="Kacper Górka" class="w-32 h-32 sm:w-24 sm:h-24 rounded-full border-4 border-gray-200 dark:border-gray-800">
+					<img src="/images/profile.png" alt="Kacper Górka" class="w-32 h-32 sm:w-24 sm:h-24 rounded-full border-4 border-gray-200 dark:border-gray-800">
 					<div class="text-center sm:text-left">
 						<h1 class="text-xl sm:text-5xl font-semibold tracking-tight">Kacper Górka</h1>
 						<p class="text-xl sm:text-lg text-gray-500 dark:text-gray-400 mt-4">
@@ -97,5 +59,7 @@
 				</div>
 			</div>
 		</div>
+		<script src="https://cdn.tailwindcss.com"></script>
+		<script src="/scripts.js"></script>
 	</body>
 </html>
