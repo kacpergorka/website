@@ -16,6 +16,15 @@ function updateThemeColor() {
 	}
 }
 
+function setFullHeight() {
+	const vh = window.innerHeight * 0.01;
+	document.documentElement.style.setProperty('--vh', `${vh}px`);
+}
+
+window.addEventListener('resize', setFullHeight);
+window.addEventListener('orientationchange', setFullHeight);
+setFullHeight();
+
 document.addEventListener("DOMContentLoaded", () => {
 	const savedTheme = localStorage.getItem("theme");
 	const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;

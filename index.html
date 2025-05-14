@@ -19,13 +19,19 @@
 		<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
 		<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
 		<link rel="manifest" href="/site.webmanifest">
+
+		<style>
+			.mobile-full-height {
+				height: calc(var(--vh, 1vh) * 100);
+			}
+		</style>
 		
 		<script src="https://cdn.tailwindcss.com"></script>
 		<script src="/scripts.js"></script>
 	</head>
 
 	<body class="bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-500 ease-in-out h-full">
-		<div class="flex items-center justify-center min-h-screen px-4">
+		<div class="flex items-center justify-center mobile-full-height px-4">
 			<div class="text-center sm:text-left space-y-6 max-w-xl w-full">
 				<button onclick="toggleTheme()" class="absolute top-4 right-4 text-sm px-4 py-2 rounded-xl bg-gray-200 dark:bg-gray-800 hover:shadow transition-colors duration-300">
 					Switch theme
