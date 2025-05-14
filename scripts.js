@@ -28,3 +28,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	updateThemeColor();
 })
+
+document.addEventListener("DOMContentLoaded", function () {
+	const encoded = "a29udGFrdEBrYWNwZXJnb3JrYS5jb20=";
+	const decoded = atob(encoded);
+
+	const link = document.getElementById("email");
+	if (link) {
+		link.setAttribute("href", "mailto:" + decoded);
+	}
+})
