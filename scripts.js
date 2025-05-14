@@ -22,7 +22,11 @@ function setFullHeight() {
 }
 
 window.addEventListener('resize', setFullHeight);
-window.addEventListener('orientationchange', setFullHeight);
+window.addEventListener('orientationchange', () => {
+
+setTimeout(setFullHeight, 300);
+});
+
 setFullHeight();
 
 document.addEventListener("DOMContentLoaded", () => {
