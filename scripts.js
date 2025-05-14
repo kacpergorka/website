@@ -23,8 +23,14 @@ function setFullHeight() {
 
 window.addEventListener('resize', setFullHeight);
 window.addEventListener('orientationchange', () => {
+	setFullHeight();
+	setTimeout(setFullHeight, 300);
+});
 
-setTimeout(setFullHeight, 300);
+document.addEventListener("visibilitychange", () => {
+	if (document.visibilityState === "visible") {
+		setFullHeight();
+	}
 });
 
 setFullHeight();
