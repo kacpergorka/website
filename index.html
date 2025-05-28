@@ -3,45 +3,36 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta id="theme-color-meta" name="theme-color" content="#111827">
-		<title>Kacper Górka</title>
-
-		<meta name="description" content="Kacper Górka – Student at Zespół Szkół Elektronicznych in Bydgoszcz.">
+		<meta name="theme-color" content="#111827" id="theme-color-meta">
+		<meta name="description" content="Kacper Górka. I'm a student at Zespół Szkół Elektronicznych in Bydgoszcz. This website is currently a work in progress. You can contact me via email.">
 		<meta name="author" content="Kacper Górka">
 		<meta name="robots" content="index, follow">
+		<link rel="canonical" href="https://kacpergorka.com">
+		<title>Kacper Górka</title>
 
 		<meta property="og:title" content="Kacper Górka">
-		<meta property="og:description" content="Kacper Górka – Student at Zespół Szkół Elektronicznych in Bydgoszcz.">
+		<meta property="og:description" content="Kacper Górka. I'm a student at Zespół Szkół Elektronicznych in Bydgoszcz. This website is currently a work in progress. You can contact me via email.">
 		<meta property="og:type" content="website">
 		<meta property="og:url" content="https://kacpergorka.com">
 		
-		<link rel="icon" type="image/png" href="/assets/favicon-96x96.png?v=14-05-2025" sizes="96x96" />
-		<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg?v=14-05-2025" />
-		<link rel="shortcut icon" href="/assets/favicon.ico?v=14-05-2025" />
-		<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png?v=14-05-2025" />
-		<meta name="apple-mobile-web-app-title" content="Kacper" />
-		<link rel="manifest" href="/assets/site.webmanifest" />
-
-		<style>
-			.mobile-full-height {
-				height: calc(var(--vh, 1vh) * 100);
-			}
-		</style>
-		
-		<script src="https://cdn.tailwindcss.com"></script>
-		<script src="/scripts.js"></script>
+		<link rel="icon" type="image/png" href="/assets/favicon-96x96.png" sizes="96x96">
+		<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+		<link rel="shortcut icon" href="/assets/favicon.ico">
+		<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+		<meta name="apple-mobile-web-app-title" content="Kacper">
+		<link rel="manifest" href="/assets/site.webmanifest">
 	</head>
-
 	<body class="bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-500 ease-in-out h-full">
-		<div class="flex items-center justify-center mobile-full-height px-4">
+		<header>
+			<button onclick="toggleTheme()" class="absolute top-4 right-4 text-sm px-4 py-2 rounded-xl bg-gray-200 dark:bg-gray-800 hover:shadow transition-colors duration-300 flex items-center gap-2">
+				<i id="theme-icon" class="bi bi-sun-fill"></i>
+				Switch theme
+			</button>
+		</header>
+		<main class="flex items-center justify-center mobile-full-height px-4">
 			<div class="text-center sm:text-left space-y-6 max-w-xl w-full">
-				<button onclick="toggleTheme()" class="absolute top-4 right-4 text-sm px-4 py-2 rounded-xl bg-gray-200 dark:bg-gray-800 hover:shadow transition-colors duration-300">
-					Switch theme
-				</button>
-
 				<div class="flex flex-col items-center justify-center sm:flex-row sm:items-start sm:space-x-6 sm:space-y-0 space-y-6">
-					<img src="/images/profile.png" alt="Kacper Górka"
-						class="w-32 h-32 sm:w-24 sm:h-24 rounded-full border-4 border-gray-200 dark:border-gray-800 transition-colors duration-500 ease-in-out">
+					<img src="/images/profile.png" alt="Kacper Górka" class="w-32 h-32 sm:w-24 sm:h-24 rounded-full border-4 border-gray-200 dark:border-gray-800 transition-colors duration-500 ease-in-out">
 					<div class="text-center sm:text-left">
 						<h1 class="text-xl sm:text-5xl font-semibold tracking-tight">Kacper Górka</h1>
 						<p class="text-xl sm:text-lg text-gray-500 dark:text-gray-400 mt-4">
@@ -49,25 +40,28 @@
 						</p>
 					</div>
 				</div>
-
 				<div class="flex justify-center space-x-6 mt-6">
-					<a href="https://github.com/kacpergorka" target="_blank" class="hover:scale-110 transition-transform">
+					<a href="https://github.com/kacpergorka" target="_blank" rel="noopener noreferrer" class="hover:scale-110 transition-transform">
 						<img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg" alt="GitHub" class="w-6 h-6 dark:invert transition duration-300">
 					</a>
 					<a id="email" class="hover:scale-110 transition-transform">
 						<img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/maildotru.svg" alt="Email" class="w-6 h-6 dark:invert transition duration-300">
 					</a>
-					<a href="https://www.facebook.com/kacpergorka.dev" target="_blank" class="hover:scale-110 transition-transform">
+					<a href="https://www.facebook.com/kacpergorka.dev" target="_blank" rel="noopener noreferrer" class="hover:scale-110 transition-transform">
 						<img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" alt="Facebook" class="w-6 h-6 dark:invert transition duration-300">
 					</a>
-					<a href="https://www.instagram.com/kacpergorka.dev" target="_blank" class="hover:scale-110 transition-transform">
+					<a href="https://www.instagram.com/kacpergorka.dev" target="_blank" rel="noopener noreferrer" class="hover:scale-110 transition-transform">
 						<img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram" class="w-6 h-6 dark:invert transition duration-300">
 					</a>
-					<a href="https://discord.gg/8yUkjcWUFK" target="_blank" class="hover:scale-110 transition-transform">
+					<a href="https://discord.gg/8yUkjcWUFK" target="_blank" rel="noopener noreferrer" class="hover:scale-110 transition-transform">
 						<img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/discord.svg" alt="Discord" class="w-6 h-6 dark:invert transition duration-300">
 					</a>
 				</div>
 			</div>
-		</div>
+		</main>
+		<script src="https://cdn.tailwindcss.com"></script>
+		<script src="/scripts.js" defer></script>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+		<link rel="stylesheet" href="/styles.css">
 	</body>
 </html>
