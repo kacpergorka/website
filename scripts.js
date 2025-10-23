@@ -21,8 +21,8 @@ function updateThemeIcon() {
 
 function updateThemeColor() {
 	const themeColorMeta = document.getElementById("theme-color-meta");
-  	const isDark = document.documentElement.classList.contains("dark");
-  	if (themeColorMeta) {
+	const isDark = document.documentElement.classList.contains("dark");
+	if (themeColorMeta) {
 		themeColorMeta.setAttribute("content", isDark ? "#111827" : "#ffffff");
 	}
 }
@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
 		document.documentElement.classList.add("dark");
-  	} else {
+	} else {
 		document.documentElement.classList.remove("dark");
 	}
 
