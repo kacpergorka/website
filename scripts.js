@@ -1,24 +1,3 @@
-tailwind.config = {
-	darkMode: "class"
-};
-
-function toggleTheme() {
-	const isDark = document.documentElement.classList.toggle("dark");
-	localStorage.setItem("theme", isDark ? "dark" : "light");
-	updateThemeColor();
-	updateThemeIcon();
-}
-
-function updateThemeIcon() {
-	const icon = document.getElementById("theme-icon");
-	const isDark = document.documentElement.classList.contains("dark");
-
-	if (!icon) return;
-
-	icon.classList.remove("bi-sun-fill", "bi-moon-fill");
-	icon.classList.add(isDark ? "bi-moon-fill" : "bi-sun-fill");
-}
-
 function updateThemeColor() {
 	const themeColorMeta = document.getElementById("theme-color-meta");
 	const isDark = document.documentElement.classList.contains("dark");
@@ -57,7 +36,6 @@ document.addEventListener("DOMContentLoaded", () => {
 	}
 
 	updateThemeColor();
-	updateThemeIcon();
 
 	const encoded = "a29udGFrdEBrYWNwZXJnb3JrYS5jb20=";
 	const decoded = atob(encoded);

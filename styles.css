@@ -1,3 +1,145 @@
-.mobile-full-height {
+/* Reset and Base */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	line-height: 1.5;
+	-webkit-text-size-adjust: 100%;
+}
+
+body {
+	font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+		"Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+	background-color: #ffffff;
+	color: #111827;
+	transition: background-color 500ms ease-in-out, color 500ms ease-in-out;
+	height: 100%;
+}
+
+html.dark body {
+	background-color: #111827;
+	color: #f3f4f6;
+}
+
+/* Main Layout */
+.main-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	height: calc(var(--vh, 1vh) * 100);
+	padding-left: 1rem;
+	padding-right: 1rem;
+}
+
+.content-wrapper {
+	text-align: center;
+	max-width: 36rem;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+}
+
+/* Profile Section */
+.profile-section {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 1.5rem;
+}
+
+.profile-img {
+	width: 8rem;
+	height: 8rem;
+	border-radius: 9999px;
+	border: 4px solid #e5e7eb;
+	transition: border-color 500ms ease-in-out;
+}
+
+html.dark .profile-img {
+	border-color: #1f2937;
+}
+
+.profile-text {
+	text-align: center;
+}
+
+.profile-text h1 {
+	font-size: 1;
+	line-height: 2;
+	font-weight: 600;
+	letter-spacing: -0.025em;
+}
+
+.profile-text p {
+	font-size: 1rem;
+	color: #6b7280;
+	margin-top: 1rem;
+}
+
+html.dark .profile-text p {
+	color: #9ca3af;
+}
+
+/* Social Links */
+.social-links {
+	display: flex;
+	justify-content: center;
+	gap: 1.5rem;
+}
+
+.social-links a {
+	transition: transform 200ms ease;
+	display: inline-flex;
+}
+
+.social-links a:hover {
+	transform: scale(1.1);
+}
+
+.social-icon {
+	width: 1.5rem;
+	height: 1.5rem;
+	transition: filter 300ms ease;
+}
+
+html.dark .social-icon {
+	filter: invert(1);
+}
+
+/* Responsive (sm: 640px+) */
+@media (min-width: 640px) {
+	.content-wrapper {
+		text-align: left;
+	}
+
+	.profile-section {
+		flex-direction: row;
+		align-items: flex-start;
+		gap: 1.5rem;
+	}
+
+	.profile-img {
+		width: 6rem;
+		height: 6rem;
+	}
+
+	.profile-text {
+		text-align: left;
+	}
+
+	.profile-text h1 {
+		font-size: 3rem;
+		line-height: 1;
+	}
+
+	.profile-text p {
+		font-size: 1.125rem;
+	}
 }
