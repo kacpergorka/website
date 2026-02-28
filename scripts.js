@@ -1,47 +1,46 @@
-function updateThemeColor() {
-	const themeColorMeta = document.getElementById("theme-color-meta");
-	const isDark = document.documentElement.classList.contains("dark");
-	if (themeColorMeta) {
-		themeColorMeta.setAttribute("content", isDark ? "#111827" : "#ffffff");
-	}
-}
+const updateThemeColor = () => {
+    const themeColorMeta = document.getElementById("theme-color-meta");
+    if (themeColorMeta) {
+        const isDark = document.documentElement.classList.contains("dark");
+        themeColorMeta.setAttribute("content", isDark ? "#111827" : "#ffffff");
+    }
+};
 
-function setFullHeight() {
-	const vh = window.innerHeight * 0.01;
-	document.documentElement.style.setProperty('--vh', `${vh}px`);
-}
+const initializeTheme = () => {
+    const savedTheme = localStorage.getItem("theme");
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
 
-window.addEventListener('resize', setFullHeight);
-window.addEventListener('orientationchange', () => {
-	setFullHeight();
-	setTimeout(setFullHeight, 300);
-});
+    if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
+        document.documentElement.classList.add("dark");
+    } else {
+        document.documentElement.classList.remove("dark");
+    }
 
-document.addEventListener("visibilitychange", () => {
-	if (document.visibilityState === "visible") {
-		setFullHeight();
-	}
-});
+    updateThemeColor();
+};
 
-setFullHeight();
+const initializeEmailProtection = () => {
+    const encoded = "a29udGFrdEBrYWNwZXJnb3JrYS5jb20=";
+    const link = document.getElementById("email");
+    if (link) {
+        link.setAttribute("href", `mailto:${atob(encoded)}`);
+    }
+};
 
 document.addEventListener("DOMContentLoaded", () => {
-	const savedTheme = localStorage.getItem("theme");
-	const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    initializeTheme();
+    initializeEmailProtection();
+});
 
-	if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
-		document.documentElement.classList.add("dark");
-	} else {
-		document.documentElement.classList.remove("dark");
-	}
-
-	updateThemeColor();
-
-	const encoded = "a29udGFrdEBrYWNwZXJnb3JrYS5jb20=";
-	const decoded = atob(encoded);
-
-	const link = document.getElementById("email");
-	if (link) {
-		link.setAttribute("href", "mailto:" + decoded);
-	}
+// Watch for system theme changes dynamically
+window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", (e) => {
+    // Only update automatically if the user hasn't explicitly set a preference
+    if (!localStorage.getItem("theme")) {
+        if (e.matches) {
+            document.documentElement.classList.add("dark");
+        } else {
+            document.documentElement.classList.remove("dark");
+        }
+        updateThemeColor();
+    }
 });
