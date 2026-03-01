@@ -1,24 +1,4 @@
-/* Reset and Base */
-:root {
-    --bg-color: #ffffff;
-    --text-color: #111827;
-    --text-muted: #6b7280;
-    --border-color: #e5e7eb;
-    --icon-filter: none;
-    --transition-speed: 500ms;
-}
-
-html.dark {
-    --bg-color: #111827;
-    --text-color: #f3f4f6;
-    --text-muted: #9ca3af;
-    --border-color: #1f2937;
-    --icon-filter: invert(1);
-}
-
-*,
-*::before,
-*::after {
+*, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -26,30 +6,28 @@ html.dark {
 
 html {
     line-height: 1.5;
-    -webkit-text-size-adjust: 100%;
 }
 
 body {
-    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
-        "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    transition: background-color var(--transition-speed) ease-in-out,
-        color var(--transition-speed) ease-in-out;
-    /* Modern dynamic viewport height fallback */
-    min-height: 100vh;
-    min-height: 100dvh;
+    font-family: system-ui, sans-serif;
+    background-color: #111827;
+    color: #f3f4f6;
 }
 
-/* Main Layout */
-.main-container {
+main {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 100vh;
     min-height: 100dvh;
     padding-left: 1rem;
     padding-right: 1rem;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
 }
 
 .content-wrapper {
@@ -61,25 +39,11 @@ body {
     gap: 1.5rem;
 }
 
-/* Profile Section */
-.profile-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 1.5rem;
-}
-
 .profile-img {
     width: 8rem;
     height: 8rem;
     border-radius: 9999px;
-    border: 4px solid var(--border-color);
-    transition: border-color var(--transition-speed) ease-in-out;
-}
-
-.profile-text {
-    text-align: center;
+    border: 4px solid #1f2937;
 }
 
 .profile-text h1 {
@@ -89,12 +53,10 @@ body {
 
 .profile-text p {
     font-size: 1rem;
-    color: var(--text-muted);
+    color: #9ca3af;
     margin-top: 1rem;
-    transition: color var(--transition-speed) ease-in-out;
 }
 
-/* Social Links */
 .social-links {
     display: flex;
     justify-content: center;
@@ -113,19 +75,17 @@ body {
 .social-icon {
     width: 1.5rem;
     height: 1.5rem;
-    transition: filter var(--transition-speed) ease;
-    filter: var(--icon-filter);
+    filter: invert(1);
 }
 
-/* Responsive (sm: 640px+) */
 @media (min-width: 640px) {
-    .content-wrapper {
-        text-align: left;
-    }
-
-    .profile-section {
+    section {
         flex-direction: row;
         align-items: flex-start;
+    }
+
+    .content-wrapper {
+        text-align: left;
     }
 
     .profile-img {
